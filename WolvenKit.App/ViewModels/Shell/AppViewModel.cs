@@ -163,12 +163,12 @@ namespace WolvenKit.ViewModels.Shell
                     if (!(await _autoInstallerService.CheckForUpdate())
                         .Out(out var release))
                     {
-                        _loggerService.Info($"Is update available: {release != null}");
+                        _loggerService.Info($"Is WolvenKit update available: {release != null}");
                         return;
                     }
 
                     _settingsManager.IsUpdateAvailable = true;
-                    _loggerService.Success($"Update available: {release.TagName}");
+                    _loggerService.Success($"Wolvenkit update available: {release.TagName}");
 
                     //var result = await Interactions.ShowMessageBoxAsync("An update is available for WolvenKit. Exit the app and install it?", "Update available");
                     //switch (result)
